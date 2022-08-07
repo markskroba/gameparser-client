@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 5% 10%;
+    border-style: solid;
+    border-width: 1px;
+}
+
+section {
+    padding: 2%;
+}
+
+h1 {
+    display: flex;
+}
+
+.sides {
+    display: flex;
+    flex-direction: row;
+}
+
+.top-side {
+    flex: 0.5;
+    flex-direction: column;
+}
