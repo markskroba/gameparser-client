@@ -1,6 +1,6 @@
 import Checkbox from "./Checkbox"
 
-const RegionSelectionSide = () => {
+const RegionSelectionSide = ({ getRegions }) => {
 
     const regions = ["MS.GB", "MS.RU", "MS.TR", "MS.AR"]
     let checked = new Set()
@@ -12,7 +12,7 @@ const RegionSelectionSide = () => {
             checked.add(name)
         }
 
-        console.log(checked)
+        getRegions(Array.from(checked))
     }
 
     return (
