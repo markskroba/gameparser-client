@@ -3,7 +3,12 @@ import RegionSelectionSide from "./RegionSelectionSide"
 import SourceSelectionSide from "./SourceSelectionSide"
 
 const ParsingOptionsPanel = () => {
+    let sources = []
     let regions = []
+
+    const updateSelectedSources = (newSources) => {
+        sources = newSources
+    }
 
     const updateSelectedRegions = (newRegions) => {
         regions = newRegions
@@ -11,6 +16,7 @@ const ParsingOptionsPanel = () => {
 
     const submit = () => {
         console.log({
+            sources,
             regions
         })
     }
@@ -19,7 +25,7 @@ const ParsingOptionsPanel = () => {
         <section>
             <h1>Настройка парсинга</h1>
             <div class="sides">
-                <SourceSelectionSide />
+                <SourceSelectionSide getSources={updateSelectedSources} />
                 <RegionSelectionSide getRegions={updateSelectedRegions} />
             </div>
 
