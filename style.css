@@ -81,3 +81,8 @@ button {
 #btn-cancel {
     background-color: #f5cfcd;
 }
+
+#first-row {
+    background-color: #24455c;
+    color: white
+}
