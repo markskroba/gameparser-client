@@ -1,10 +1,12 @@
 import { useState } from "react"
+import GameCountSection from "./GameCountSection"
 import RegionSelectionSide from "./RegionSelectionSide"
 import SourceSelectionSide from "./SourceSelectionSide"
 
 const ParsingOptionsPanel = () => {
     let sources = []
     let regions = []
+    let count = 0
 
     const updateSelectedSources = (newSources) => {
         sources = newSources
@@ -14,10 +16,15 @@ const ParsingOptionsPanel = () => {
         regions = newRegions
     }
 
+    const updateGameCount = (newCount) => {
+        count = newCount
+    }
+
     const submit = () => {
         console.log({
             sources,
-            regions
+            regions,
+            count
         })
     }
 
@@ -29,8 +36,7 @@ const ParsingOptionsPanel = () => {
                 <RegionSelectionSide getRegions={updateSelectedRegions} />
             </div>
 
-            <h3>Выберите кол-во игр для парсинга</h3>
-            <input type="text" placeholder="1000" id="game-count" />
+            <GameCountSection getCount={updateGameCount} />
 
             <div class="top-buttons">
                 <button id="btn-submit" onClick={submit}>Начать</button>
