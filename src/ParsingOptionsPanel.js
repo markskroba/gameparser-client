@@ -1,7 +1,10 @@
+import { useState } from "react"
 import RegionSelectionSide from "./RegionSelectionSide"
 import SourceSelectionSide from "./SourceSelectionSide"
 
 const ParsingOptionsPanel = () => {
+
+
     return (
         <section>
             <h1>Настройка парсинга</h1>
@@ -17,7 +20,7 @@ const ParsingOptionsPanel = () => {
                 <button id="btn-submit">Начать</button>
                 <button id="btn-cancel">Отмена</button>
             </div>
-        </section>
+        </section >
     )
 }
 

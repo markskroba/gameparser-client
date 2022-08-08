@@ -1,20 +1,35 @@
+import Checkbox from "./Checkbox"
 
 const RegionSelectionSide = () => {
+
+    const regions = ["MS.GB", "MS.RU", "MS.TR", "MS.AR"]
+    let checked = new Set()
+
+    const onCheck = (name) => {
+        if (checked.has(name)) {
+            checked.delete(name)
+        } else {
+            checked.add(name)
+        }
+
+        console.log(checked)
+    }
+
     return (
         <div class="top-side">
             <h3>Дополнительные настройки источника</h3>
             <select name="cars" id="cars">
                 <option value="volvo">MS.RU</option></select
             ><br />
-            <input type="checkbox" name="" id="" />
-            <label for="vehicle1"> MS.GB</label><br />
-            <input type="checkbox" name="" id="" />
-            <label for="vehicle1"> MS.RU</label><br />
-            <input type="checkbox" name="" id="" />
-            <label for="vehicle1"> MS.TR</label><br />
-            <input type="checkbox" name="" id="" />
-            <label for="vehicle1"> MS.AR</label><br />
-        </div>
+
+            {
+                regions.map((value) => {
+                    return (
+                        <Checkbox name={value} handleCheckboxChange={onCheck} />
+                    )
+                })
+            }
+        </div >
     )
 }
 
