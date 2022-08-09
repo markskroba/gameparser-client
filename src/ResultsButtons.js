@@ -1,11 +1,22 @@
+import { useState } from "react"
 
-const ResultsButtons = () => {
+const ResultsButtons = ({ updateActive, active }) => {
+    const sources = ["Xbox Game Console", "Xbox Game PC", "Xbox DLC", "Xbox Pre-Order"]
+
+    const activate = (event) => {
+        active = event.target.id
+        console.log(active)
+        updateActive(active)
+    }
+
     return (
         <div id="bottom-categories">
-            <button class="bottom-category">Xbox Game Console</button>
-            <button class="bottom-category">Xbox Game PC</button>
-            <button class="bottom-category">Xbox DLC</button>
-            <button class="bottom-category">Xbox Pre-Order</button>
+
+            {sources.map((value) => {
+                return <button class={
+                    `bottom-category ${active === value ? 'active' : ''}`
+                } id={value} onClick={activate}>{value}</button>
+            })}
         </div>
     )
 }

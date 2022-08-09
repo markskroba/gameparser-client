@@ -86,3 +86,7 @@ button {
     background-color: #24455c;
     color: white
 }
+
+.active {
+    background-color: green;
+}
