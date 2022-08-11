@@ -1,32 +1,32 @@
-import { useState } from "react"
-import GameCountSection from "./GameCountSection"
-import RegionSelectionSide from "./RegionSelectionSide"
-import SourceSelectionSide from "./SourceSelectionSide"
+import { useState } from "react";
+import GameCountSection from "./GameCountSection";
+import RegionSelectionSide from "./RegionSelectionSide";
+import SourceSelectionSide from "./SourceSelectionSide";
 
 const ParsingOptionsPanel = () => {
-    let sources = []
-    let regions = []
-    let count = 0
+    let source = null;
+    let region = null;
+    let count = 0;
 
     const updateSelectedSources = (newSources) => {
-        sources = newSources
-    }
+        source = newSources;
+    };
 
     const updateSelectedRegions = (newRegions) => {
-        regions = newRegions
-    }
+        region = newRegions;
+    };
 
     const updateGameCount = (newCount) => {
-        count = newCount
-    }
+        count = newCount;
+    };
 
     const submit = () => {
         console.log({
-            sources,
-            regions,
-            count
-        })
-    }
+            source,
+            region,
+            count,
+        });
+    };
 
     return (
         <section>
@@ -39,11 +39,13 @@ const ParsingOptionsPanel = () => {
             <GameCountSection getCount={updateGameCount} />
 
             <div class="top-buttons">
-                <button id="btn-submit" onClick={submit}>Начать</button>
+                <button id="btn-submit" onClick={submit}>
+                    Начать
+                </button>
                 <button id="btn-cancel">Отмена</button>
             </div>
-        </section >
-    )
-}
+        </section>
+    );
+};
 
-export default ParsingOptionsPanel
+export default ParsingOptionsPanel;
