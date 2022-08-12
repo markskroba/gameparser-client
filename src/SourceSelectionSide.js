@@ -8,7 +8,6 @@ const SourceSelectionSide = ({ getSources }) => {
         "Xbox DLC",
         "Xbox Pre-Order",
     ];
-    let checked = new Set();
     const [selected, setSelected] = useState(null);
 
     return (

@@ -87,6 +87,15 @@ button {
     color: white
 }
 
+.data_row {
+    background-color: lightblue;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
 .active {
     background-color: green;
 }

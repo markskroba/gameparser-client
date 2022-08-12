@@ -1,11 +1,8 @@
 import { useState } from "react";
-import Checkbox from "./Checkbox";
-import Radio from "./Radio";
 
 const RegionSelectionSide = ({ getRegions }) => {
     const regions = ["MS.GB", "MS.RU", "MS.TR", "MS.AR"];
     const [selected, setSelected] = useState(null);
-    let checked = new Set();
 
     return (
         <div class="top-side">
