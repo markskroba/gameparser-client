@@ -16,7 +16,7 @@ const ParsingResultsPanel = () => {
         console.log(active);
 
         axios
-            .get(`http://localhost:5000/update/${active}`)
+            .get(`https://gameparser-server.herokuapp.com/update/${active}`)
             .then((res) => {
                 setData(res.data);
             })
