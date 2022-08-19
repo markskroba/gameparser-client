@@ -24,15 +24,15 @@ const ResultsTable = ({ data }) => {
                         <td>{id + 1}</td>
                         <td>{row.name}</td>
                         <td>{row.rating}</td>
-                        <td>{row.is_on_sale}</td>
-                        <td>{row.game_sale}</td>
+                        <td>{row.is_on_sale ? "True" : "False"}</td>
+                        <td>{row.game_sale ? "True" : "False"}</td>
                         <td>{row.sale_end_date}</td>
                         <td>{row.first_price}</td>
                         <td>{row.first_region}</td>
                         <td>{row.second_price}</td>
                         <td>{row.second_region}</td>
                         <td>{row.difference}</td>
-                        <td>{row.buy}</td>
+                        <td>{row.buy ? "True" : "False"}</td>
                     </tr>
                 );
             })}
