@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import GameCountSection from "./GameCountSection";
 import RegionSelectionSide from "./RegionSelectionSide";
@@ -21,11 +22,27 @@ const ParsingOptionsPanel = () => {
     };
 
     const submit = () => {
-        console.log({
-            source,
-            region,
-            count,
-        });
+        console.log("Submit");
+        axios
+            .post(`https://gameparser-server.herokuapp.com/parse`, {
+                // .post(`http://localhost:5000/parse`, {
+                source,
+                region,
+                count: parseInt(count),
+            })
+            .then((res) => {
+                console.log(res);
+            });
+    };
+
+    const cancel = () => {
+        console.log("Submit");
+        axios
+            .post(`https://gameparser-server.herokuapp.com/stop`)
+            // .post(`http://localhost:5000/stop`)
+            .then((res) => {
+                console.log(res);
+            });
     };
 
     return (
@@ -42,7 +59,9 @@ const ParsingOptionsPanel = () => {
                 <button id="btn-submit" onClick={submit}>
                     Начать
                 </button>
-                <button id="btn-cancel">Отмена</button>
+                <button id="btn-cancel" onClick={cancel}>
+                    Отмена
+                </button>
             </div>
         </section>
     );
